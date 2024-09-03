@@ -1,0 +1,33 @@
+<div class="container ">
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+{#        <span class="fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Простой заголовок</font></font></span>#}
+    </a>
+    
+    <ul class="nav nav-pills">
+        <a href="{% url 'home_index' %}" class="btn btn-success nav-link px-2 " style="margin-right: 10px;">На главную</a>
+        <a href="{% url 'phone_list'  %}" class="nav-link px-2 btn btn-outline-info" style="margin-left: 10px;">Каталоr</a>
+        
+        <li ><a class="nav-link px-2 text-body-secondary " style="margin-right: 10px;">Добавить:</a></li>
+
+        <div class="btn-group" role="group" aria-label="Basic outlined example" style="margin-right: 10px;" >
+            <button type="button" class="btn btn-outline-primary">Телефон<a href="{% url 'add_phone' %}" class="nav-link px-2 text-body-secondary"></a></button>
+            <button type="button" class="btn btn-outline-primary">Новость<a href="{% url 'post_new' %}" class="nav-link px-2 text-body-secondary"></a></button>
+{#            <button type="button" class="btn btn-outline-primary">Поставщика<a href="{% url 'provider_new' %}" class="nav-link px-2 text-body-secondary"></a></button>#}
+            <button type="button" class="btn btn-outline-primary ">Оформить заказ<a href="{% url 'deliveries_new' %}" class="nav-link px-2 text-body-secondary"></a></button>
+        </div>
+
+{#        <li ><a href="{% url 'CurentProvider_new' %}" class="nav-link px-2 text-body-secondary">Добавить заказ</a></li>#}
+
+        {% if user.is_authenticated %}
+            <a  href="{% url 'profile' %}" class="nav-item nav-link btn btn-info btn-sm mr-1" style="margin-right: 10px; margin-left: 10px;">Профиль</a>
+            <a  href="{% url 'logout' %}"  class="nav-item nav-link btn btn-outline-secondary btn-sm mr-1" style="margin-left: 10px;">Выход</a>
+        {% else %}
+            <a href="{% url 'login'    %}" class =" btn btn-outline-primary" style="margin-right: 10px;">Вход</a>
+            <a href="{% url 'register' %}" class ="nav-item nav-link btn btn-primary">Регистрация </a>
+        {% endif %}
+
+    </ul>
+</header>
+</div>

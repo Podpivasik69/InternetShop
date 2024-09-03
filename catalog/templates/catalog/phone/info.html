@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ one_phone.title }}
+{% endblock %}
+
+{% block content %}
+    {% if one_phone.photo %}
+    Фото: <img src="{{ one_phone.photo.url }}" align="left" width="320" height="400">
+    {% endif %}
+    
+        <h2>Название: {{ one_phone.title }}</h2>
+        <p>Модель: {{ one_phone.model }}</p>
+        <p>Количество памяти: {{ one_phone.count_data }}</p>
+        <p>Цвет: {{ one_phone.color }}</p>
+        <p>Процессор: {{ one_phone.processor }}</p>
+        <p>Камера: {{ one_phone.camera }}</p>
+        <p>Аккумулятор: {{ one_phone.battery}}</p>
+        <h2>Цена: {{ one_phone.price }}</h2>
+        <a href="{% url 'phone_list' %}">Обратно к каталогу</a>
+
+{% endblock %}
+
+

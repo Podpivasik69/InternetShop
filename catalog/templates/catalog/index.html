@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    Интернет магазин
+{% endblock %}
+
+{%block content  %}
+    <h1 style="margin-left: 10px; margin-bottom: 20px;"> Домашняя страница
+    </h1>
+    <div class="content" style="margin-left: 10px;" >
+{#        <a class="btn btn-primary" href="{% url 'catalog'%}" role="button">Домашняя страница</a>#}
+        <a class="btn btn-primary" href="{% url 'phone_list'  %}" role="button">Каталог</a>
+
+    </div>
+{% endblock %}
+

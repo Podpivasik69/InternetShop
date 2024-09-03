@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Интернет магазин
+{% endblock %}
+
+{% block content %}
+<div xmlns="http://www.w3.org/1999/html">
+    <h1>Каталог</h1>
+    <p></p>
+    <a class="btn btn-primary" href="{% url 'home_index' %}">На главную</a>
+    <div class="container mb-4">
+        <div class="row">
+            {% for item in all_phones %}
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <div class="card-img-wrapper">
+                            {% if item.photo %}
+                                <img src="{{ item.photo.url }}" class="card-img-top" alt="{{ item.title }}">
+                            {% else %}
+                                <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="Default Image">
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{ item.title }}</h3>
+                            <h3 class="card-title">{{ item.provider }}</h3>
+                            <h2 class="card-title">{{ item.model }}</h2>
+                            <p class="card-title">{{ item.price }}</p>
+                            <a href="{% url 'phone_description' item.pk %}" class="btn btn-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

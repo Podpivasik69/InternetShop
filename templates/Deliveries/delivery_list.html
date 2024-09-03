@@ -1,0 +1,23 @@
+{#{% extends 'base.html' %}#}
+{#{% block content %}#}
+{#    <h1>Ваши заказы:</h1>#}
+{#    <p></p>#}
+{#    {% for deliveries in object_list %}#}
+{#        <div class="post-entry">#}
+{#            <h2> <a href="{% url 'deliveries_detail' deliveries %}">{{ deliveries.delivery_number }}</a></h2>#}
+{#            <p>{{ deliveries.delivery_data }}</p>#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#{% endblock content %}#}
+{% extends 'base.html' %}
+{% block content %}
+    {% for deliveries in object_list %}
+        <div class="post-entry">
+            <h2><a href="">{{ deliveries.title }}</a></h2>
+            <p>{{ deliveries.item }}</p>
+            <p>{{ deliveries.price }}</p>
+            <p>{{ deliveries.data }}</p>
+            
+        </div>
+    {% endfor %}
+{% endblock content %}

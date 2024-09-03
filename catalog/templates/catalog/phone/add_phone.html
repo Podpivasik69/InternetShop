@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+ Добавление телефона в каталог
+{% endblock %}
+{%block content  %}
+    <h1> Давай добавим телефон</h1>
+    <a href="{% url 'phone_list' %}"> Каталог</a>
+    <form action="{% url 'add_phone' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block" > Добавить телефон </button>
+    </form>
+{% endblock %}

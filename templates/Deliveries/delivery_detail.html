@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="post-entry">
+    <a href="{% url 'deliveries_edit' deliveries.pk %}">Редактировать заказ</a>
+    <a href="{% url 'deliveries_delete' deliveries.pk %}">Удалить заказ</a>
+    <a href="{% url 'deliveries' %}" >Вернуться назад к вашим заказам</a>
+      <h4>{{ deliveries.delivery_data }}</h4>
+      <h4>{{ deliveries.delivery_item }}</h4>
+      <h4>{{ deliveries.delivery_price }}</h4>
+      <h4>{{ deliveries.delivery_count }}</h4>
+      <h4>{{ deliveries.provider }}</h4>
+  </div>
+{% endblock content %}
+

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <!-- Отображение аватара пользователя -->
+        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }}">
+        <div class="media-body">
+          <!-- Отображение Фамилии, Имени и Отчества -->
+          <h2 class="account-heading">{{ user.profile.last_name }} {{ user.profile.first_name }} {{ user.profile.patronymic }}</h2>
+          <!-- Отображение Email -->
+          <p class="text-secondary">{{ user.email }}</p>
+          <!-- Отображение Даты рождения -->
+          <p class="text-secondary">Дата рождения: {{ user.profile.birth_date|date:"d.m.Y" }}</p>
+        </div>
+      </div>
+      <!-- Здесь будет форма -->
+    </div>
+{% endblock content %}

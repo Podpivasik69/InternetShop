@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Удалить заказ</h1>
+    <form action="" method="post">{% csrf_token %}
+      <p>Вы уверены, что хотите удалить ваш заказ?: "{{ deliveries.delivery_number }}"?</p>
+      <input type="submit" value="Да, я уверен и хочу мой заказ!" />
+    </form>
+{% endblock content %}
